@@ -18,6 +18,8 @@ html, body {
 
     margin: 0px;
     padding: 0px;
+
+    color: white;
 }
 
 .navBar h2 {
@@ -46,9 +48,9 @@ main {
 
     background-image: url(background.jpg);
     background-size: 100%;
-    background-position: fixed;
+    background-attachment:fixed;
 
-    color: #A1C6D9;
+    color: white;
 }
 
 main .overlay {
@@ -70,7 +72,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', e
 }
 
 main h1 {
-    margin: 0px;
+    margin: 10px;
 
     font-size: 4em;
 }
