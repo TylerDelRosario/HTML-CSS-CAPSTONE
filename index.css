@@ -74,8 +74,12 @@ main {
     width: 100%;
     height: 100%;
 
+    margin: 0px;
+
     background-image: url(background.jpg);
-    background-size: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-attachment:fixed;
 
     font-family: 'Abril Fatface', cursive;
@@ -102,10 +106,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', e
 }
 
 main h1 {
-    margin: 10px 10px 20px 10px;
+    margin: 0px 10px 20px 10px;
 
     letter-spacing: 6x;
-    font-size: 4em;
+    font-size: 3.5em;
 }
 
 main .miniHeader {
@@ -123,7 +127,7 @@ main .headerText {
 
 main .mainButton {
     margin: 20px;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
 
     
     border: 1px solid white;
@@ -140,4 +144,100 @@ main .mainButton:hover {
     color: #333;
 
     transition: all 0.3s ease-in;
+}
+
+.pricingSection {
+    margin: 0px;
+
+    background-color: rgb(210, 238, 255);
+}
+
+.pricingSection header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pricingSection header p {
+    text-align: center;
+    width: 500px;
+
+    margin: 10px;
+    padding: 0px;
+
+    font-size: 16px;
+    line-height: 35px;
+}
+
+.pricingSection .priceHeading {
+    text-align: center;
+
+    margin: 0px;
+    padding: 20px 0px 0px 0px;
+
+    font-family: 'Abril Fatface';
+    font-size: 3em;
+    letter-spacing: 1px;
+}
+
+.pricingSection div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.productSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: 50px 0px 50px 0px;
+    padding-bottom: 35px;
+
+    width:250px;
+
+    background-color: hsl(216, 100%, 55%);
+    border: 1px solid rgb(210, 238, 255);
+    border-radius: 5px;
+}
+
+.productSection ul {
+    width: 100%;
+
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    list-style-type:none;
+}
+
+.productSection h2 {
+    margin: 0px;
+    padding: 10px 0px;
+    text-align: center;
+
+    font-size: 28px;
+    font-family: 'Abril Fatface';
+}
+
+.productSection li {
+    width: 100%;
+    padding: 5px 0px;
+
+    font-size: 20px;
+}
+
+.productSection .odd {
+    background-color: white;
+}
+
+.productSection .even {
+    background-color: lightgray;
+}
+
+#premium {
+    background-color: hsl(279, 100%, 50%);
+}
+
+#enterprise {
+    background-color: hsl(48, 100%, 55%);
 }
