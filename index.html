@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html data-scroll="0">
     <head>
         <meta charset="utf-8">
         <title>HTML/CSS Capstone</title>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href="index.css" rel="stylesheet">
+
+        <script>
+            document.addEventListener('scroll', () => {
+                document.documentElement.dataset.scroll = window.scrollY;
+            });
+
+            console.log("hello world!");
+        </script>
     </head>
 
     <body>
@@ -20,13 +28,16 @@
         </nav>
         <main class="mainImage">
             <div class="overlay">
+                <p class="miniHeader">Welcome to</p>
                 <h1>Ipsum Services</h1>
-                <p>Learn More</p>
+                <p class="headerText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget ipsum id augue accumsan facilisis quis.   
+                </p>
+                <p class="mainButton">Learn More</p>
             </div>
         </main>
 
         <section>
-
+            <h2>Pricing</h2>
             <section class="productSection">
                 <h2>Ipsum 1</h2>
                 <p>Lorem Ipsum sit amet</p>
