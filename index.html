@@ -7,9 +7,23 @@
         <link href="index.css" rel="stylesheet">
 
         <script>
+            const leftSlider = document.getElementById("footerLeftArrow");
+            const rightSlider = document.getElementById("footerRightArrow");
+
+            function footerLeftSlide() {
+
+            }
+
+            function footerRightSlide () {
+
+            }
+            
+
             document.addEventListener('scroll', () => {
                 document.documentElement.dataset.scroll = window.scrollY;
             });
+
+            //Click eventListener
 
             console.log("hello world!");
         </script>
@@ -83,39 +97,63 @@
             </header>
 
             <div class="testimonySlider">
-                <section class="testimony">
+                <div class="rightArrowContainer">
+                    <p id="footerRightArrow">Right SlideArrow</p>
+                </div>
+                
+                <section class="testimony testimony-visible">
                     <h3>It was great!</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                      Aenean eget ipsum id augue accumsan facilisis quis.</p>
                     <p>from David</p>
                 </section>
 
-                <section class="testimony">
+                <section class="testimony testimony-hidden">
                     <h3>Really cool stuff!</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Aenean eget ipsum id augue accumsan facilisis quis.</p>
                     <p>from John</p>
                 </section>
 
-                <section class="testimony">
+                <section class="testimony testimony-hidden">
                     <h3>Definitely underrated.</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Aenean eget ipsum id augue accumsan facilisis quis.</p>
                     <p>from Jacob</p>
                 </section>
 
-                <section class="testimony">
+                <section class="testimony testimony-hidden">
                     <h3>It has secret sauce.</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Aenean eget ipsum id augue accumsan facilisis quis.</p>
                     <p>from Creepy Joe</p>
                 </section>
+
+                <div class="slideMarkerContainer">
+                    <ul id="slideMarkerList">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+
+                <div class="leftArrowContainer">
+                    <p class="footerLeftArrow">Left Slide Arrow</p>
+                </div>
             </div>
 
         </section>
 
         <footer>
+            <P class="footerLegal">Footer and boring legal stuffies</P>
+            <p class="footerAuthor">Made by Gh0st9626</p>
 
+            <ul class="footerSocial">
+                <li>F</li>
+                <li>T</li>
+                <li>I</li>
+                <li>L</li>
+            </ul>
         </footer>
     </body>
 </html>
