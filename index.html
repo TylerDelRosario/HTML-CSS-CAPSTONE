@@ -11,19 +11,26 @@
 
                 const leftSlider = document.getElementById("footerLeftArrow");
                 const rightSlider = document.getElementById("footerRightArrow");
-
+                
+                //slideArray currently unused
                 const slideArray = [document.getElementById("slide0"), document.getElementById("slide1"),
                 document.getElementById("slide2"), document.getElementById("slide3")];
-    0
+    0           
+                //Tracks the current slide thats visible.
                 let currentSlide = 0;
 
+                
                 function footerLeftSlide(event) {
                     const classVisible = "testimony testimony-visible";
                     const classHidden = "testimony testimony-hidden";
-                    let currentSlideElement = document.getElementById("slide" + currentSlide);
 
+                    //assign the currentSlide element.
+                    let currentSlideElement = document.getElementById("slide" + currentSlide);
+                    
+                    //Make the current slide hidden.
                     currentSlideElement.setAttribute("class", classHidden);
 
+                    //Update current slide to the next slide "to the left" or - 1 on the array.
                     if (currentSlide - 1 < 0) {
                         currentSlide = slideArray.length - 1;
                     }
@@ -32,30 +39,41 @@
                         currentSlide--;
                     }
 
+                    //Update currentSlideElement to the new current slide.
                     currentSlideElement = document.getElementById("slide" + currentSlide);
 
+                    //Make the new current slide visible.
                     currentSlideElement.setAttribute("class", classVisible);
 
+                    //DEBUG
                     console.log(currentSlide);
                 }
 
                 function footerRightSlide (event) {
                     const classVisible = "testimony testimony-visible";
                     const classHidden = "testimony testimony-hidden";
-                    let currentSlideElement = document.getElementById("slide" + currentSlide);
 
+                    //assign the current slide element from DOM.
+                    let currentSlideElement = document.getElementById("slide" + currentSlide);
+                    
+                    //Make the current slide hidden.
                     currentSlideElement.setAttribute("class", classHidden);
 
+                    //Update current slide to the next slide "to the right" or + 1 on the array.
                     if (currentSlide + 1 > slideArray.length - 1) {
                         currentSlide = 0;
                     }
                     else {
                         currentSlide++;
                     }
+
+                    //Update currentSlideElement to the new current slide.
                     currentSlideElement = document.getElementById("slide" + currentSlide);
 
+                    //Make the new current slide visible.
                     currentSlideElement.setAttribute("class", classVisible);
                     
+                    //DEBUG
                     console.log(currentSlide);
                 }
                 
@@ -179,6 +197,7 @@
 
                     <div class="slideMarkerContainer">
                         <ul id="slideMarkerList">
+                            <li></li>
                             <li></li>
                             <li></li>
                             <li></li>

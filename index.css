@@ -247,6 +247,7 @@ main .mainButton:hover {
     flex-direction: column;
     align-items: center;
     margin: 0px;
+    overflow: hidden;
 
     background-color: hsl(216, 58%, 41%);
 }
@@ -262,5 +263,15 @@ main .mainButton:hover {
 }
 
 .testimony-hidden {
-    display: none;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.7s ease-in;
+}
+
+.testimony-visible {
+    position:relative;
+    visibility: visible;
+    left: 0px;
+    transition: 0.5s;
 }
