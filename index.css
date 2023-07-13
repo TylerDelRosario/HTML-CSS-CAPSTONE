@@ -260,3 +260,7 @@ main .mainButton:hover {
     letter-spacing: 1px;
     color: white;
 }
+
+.testimony-hidden {
+    display: none;
+}
