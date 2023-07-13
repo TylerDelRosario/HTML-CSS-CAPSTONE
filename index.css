@@ -242,6 +242,27 @@ main .mainButton:hover {
     background-color: hsl(48, 100%, 55%);
 }
 
+.testimonySlider {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    
+    color: white;
+}
+
+.slideContainer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
 .testimonySection {
     display: flex;
     flex-direction: column;
@@ -262,6 +283,22 @@ main .mainButton:hover {
     color: white;
 }
 
+.testimonySection #footerLeftArrow {
+    margin-top: 50px;
+    margin-right: 35px;
+
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.testimonySection #footerRightArrow {
+    margin-top: 50px;
+    margin-left: 35px;
+
+    font-size: 40px;
+    cursor: pointer;
+}
+
 .testimony-hidden {
     position: absolute;
     visibility: hidden;
@@ -275,3 +312,34 @@ main .mainButton:hover {
     left: 0px;
     transition: 0.5s;
 }
+
+#slideMarkerList {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    list-style-type: none;
+}
+
+#slideMarkerList li {
+    margin: 10px 20px 10px 20px;
+    padding: 5px;
+
+    border: 2px solid white;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#slideMarkerList .markerActive {
+    background-color: white;
+
+    transition: all 0.3s ease-in;
+}
+
+#slideMarkerList .markerInactive {
+    background-color: hsl(216, 58%, 41%);
+
+    transition: all 0.3s ease-out;
+}
+
+

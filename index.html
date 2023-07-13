@@ -3,6 +3,7 @@
         <head>
             <meta charset="utf-8">
             <title>HTML/CSS Capstone</title>
+            <script src="https://kit.fontawesome.com/4f585a18fb.js" crossorigin="anonymous"></script>
             <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
             <link href="index.css" rel="stylesheet">
 
@@ -13,9 +14,9 @@
                 const rightSlider = document.getElementById("footerRightArrow");
                 
                 //slideArray currently unused
-                const slideArray = [document.getElementById("slide0"), document.getElementById("slide1"),
-                document.getElementById("slide2"), document.getElementById("slide3")];
-    0           
+                const slideArray = [document.getElementById("marker0"), document.getElementById("marker1"),
+                document.getElementById("marker2"), document.getElementById("marker3")];
+            
                 //Tracks the current slide thats visible.
                 let currentSlide = 0;
 
@@ -23,7 +24,7 @@
                 function footerLeftSlide(event) {
                     const classVisible = "testimony testimony-visible";
                     const classHidden = "testimony testimony-hidden";
-
+                    let oldSlide = currentSlide;
                     //assign the currentSlide element.
                     let currentSlideElement = document.getElementById("slide" + currentSlide);
                     
@@ -39,6 +40,8 @@
                         currentSlide--;
                     }
 
+                    footerMarkerAdjust(oldSlide, currentSlide);
+
                     //Update currentSlideElement to the new current slide.
                     currentSlideElement = document.getElementById("slide" + currentSlide);
 
@@ -52,7 +55,7 @@
                 function footerRightSlide (event) {
                     const classVisible = "testimony testimony-visible";
                     const classHidden = "testimony testimony-hidden";
-
+                    let oldSlide = currentSlide;
                     //assign the current slide element from DOM.
                     let currentSlideElement = document.getElementById("slide" + currentSlide);
                     
@@ -67,6 +70,8 @@
                         currentSlide++;
                     }
 
+                    footerMarkerAdjust(oldSlide, currentSlide);
+
                     //Update currentSlideElement to the new current slide.
                     currentSlideElement = document.getElementById("slide" + currentSlide);
 
@@ -75,6 +80,38 @@
                     
                     //DEBUG
                     console.log(currentSlide);
+                }
+
+                function footerMarkerSlide(markerID) {
+                    const classVisible = "testimony testimony-visible";
+                    const classHidden = "testimony testimony-hidden";
+
+                    //assign the current slide element from DOM.
+                    let currentSlideElement = document.getElementById("slide" + currentSlide);
+
+                    //Make the current slide hidden.
+                    currentSlideElement.setAttribute("class", classHidden);
+                    footerMarkerAdjust(currentSlide, markerID);
+
+                    //Reassign the current slide to markerID slide.
+                    currentSlide = markerID;
+                    currentSlideElement = document.getElementById("slide" + currentSlide);
+
+                    //Make the new current slide visible.
+                    currentSlideElement.setAttribute("class", classVisible);
+
+                    //DEBUG
+                    console.log(currentSlide);
+                }
+
+                function footerMarkerAdjust(currentMarker, markerID) {
+                    let currentMarkerElement = document.getElementById("marker" + currentMarker);
+                    
+                    currentMarkerElement.setAttribute("class", "markerInactive");
+
+                    currentMarkerElement = document.getElementById("marker" + markerID);
+
+                    currentMarkerElement.setAttribute("class", "markerActive");
                 }
                 
 
@@ -89,6 +126,12 @@
                 rightSlider.addEventListener('click', (event) => {
                     footerRightSlide(event);
                 });
+
+                for (let index = 0; index < slideArray.length; index++) {
+                    slideArray[index].addEventListener('click', (event) => {
+                        footerMarkerSlide(index);
+                    });
+                }
 
                 
             });
@@ -164,9 +207,9 @@
 
                 <div class="testimonySlider">
                     <div class="rightArrowContainer">
-                        <p id="footerRightArrow">Right SlideArrow</p>
+                        <i id="footerRightArrow" class="fa-solid fa-chevron-right"></i>
                     </div>
-
+                    <div class="slideContainer">
                     <section id="slide0" class="testimony testimony-visible">
                         <h3>It was great!</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -197,15 +240,15 @@
 
                     <div class="slideMarkerContainer">
                         <ul id="slideMarkerList">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li id="marker0" class="markerActive"></li>
+                            <li id="marker1"></li>
+                            <li id="marker2"></li>
+                            <li id="marker3"></li>
                         </ul>
                     </div>
-
+                    </div>
                     <div class="leftArrowContainer">
-                        <p id="footerLeftArrow">Left Slide Arrow</p>
+                        <i id="footerLeftArrow" class="fa-solid fa-chevron-left"></i>
                     </div>
                 </div>
 
